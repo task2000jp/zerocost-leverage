@@ -1,0 +1,7 @@
+.mcp.json
+mcp.json
+.env
+*.key
+__pycache__/
+.DS_Store
+.clasp.json

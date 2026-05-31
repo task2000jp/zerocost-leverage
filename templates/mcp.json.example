@@ -1,0 +1,28 @@
+{
+  "_comment": "Claude Code 用 MCP 設定テンプレート。必要なものだけ有効化。トークンは絶対にコミットしない（.gitignoreで除外）。",
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>" }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "duckduckgo": {
+      "command": "npx",
+      "args": ["-y", "duckduckgo-mcp-server"]
+    },
+    "_notion_example": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": { "NOTION_TOKEN": "<YOUR_TOKEN>" }
+    },
+    "_supabase_example": {
+      "command": "npx",
+      "args": ["-y", "@supabase/mcp-server-supabase"],
+      "env": { "SUPABASE_ACCESS_TOKEN": "<YOUR_TOKEN>" }
+    }
+  }
+}
