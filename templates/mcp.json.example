@@ -1,28 +1,83 @@
 {
-  "_comment": "Claude Code 用 MCP 設定テンプレート。必要なものだけ有効化。トークンは絶対にコミットしない（.gitignoreで除外）。",
+  "_comment": "zerocost_leverage — MCP設定テンプレート（2026-06版）。不要なものはコメント(_)をキー名に付けて無効化。APIキーは絶対コミットしない（.gitignoreに.mcp.jsonを追加）。",
   "mcpServers": {
+
     "github": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-github"],
       "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>" }
     },
+
+    "google-sheets": {
+      "command": "mcp-google-sheets-full"
+    },
+
+    "groq-compound": {
+      "command": "npx",
+      "args": ["-y", "groq-compound-mcp-server"],
+      "env": { "GROQ_API_KEY": "<YOUR_KEY>" }
+    },
+
     "playwright": {
       "command": "npx",
-      "args": ["-y", "@playwright/mcp@latest"]
+      "args": ["-y", "@playwright/mcp@latest", "--headless=false"]
     },
-    "duckduckgo": {
+
+    "_exa": {
+      "_note": "意味検索・10k queries/月無料（2026 Q2新登場）",
       "command": "npx",
-      "args": ["-y", "duckduckgo-mcp-server"]
+      "args": ["-y", "@modelcontextprotocol/server-exa"],
+      "env": { "EXA_API_KEY": "<YOUR_KEY>" }
     },
-    "_notion_example": {
+
+    "_firecrawl": {
+      "_note": "URL→クリーンMarkdown・5k pages/月無料",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-firecrawl"],
+      "env": { "FIRECRAWL_API_KEY": "<YOUR_KEY>" }
+    },
+
+    "_supabase": {
+      "_note": "DB/認証/storage・500MB無料",
+      "command": "npx",
+      "args": ["-y", "@supabase/mcp-server-supabase"],
+      "env": { "SUPABASE_ACCESS_TOKEN": "<YOUR_TOKEN>" }
+    },
+
+    "_alpaca": {
+      "_note": "株価データ・ペーパートレード・200k req/月無料",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-alpaca"],
+      "env": {
+        "APCA_API_KEY_ID": "<YOUR_KEY>",
+        "APCA_API_SECRET_KEY": "<YOUR_SECRET>"
+      }
+    },
+
+    "_stripe": {
+      "_note": "決済管理・test mode無制限",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-stripe"],
+      "env": { "STRIPE_API_KEY": "sk_test_<YOUR_KEY>" }
+    },
+
+    "_n8n": {
+      "_note": "ワークフロー自動化・セルフホスト無料",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-n8n"],
+      "env": { "N8N_HOST": "http://localhost:5678" }
+    },
+
+    "_notion": {
       "command": "npx",
       "args": ["-y", "@notionhq/notion-mcp-server"],
       "env": { "NOTION_TOKEN": "<YOUR_TOKEN>" }
     },
-    "_supabase_example": {
+
+    "_context7": {
+      "_note": "ライブドキュメント・認証不要",
       "command": "npx",
-      "args": ["-y", "@supabase/mcp-server-supabase"],
-      "env": { "SUPABASE_ACCESS_TOKEN": "<YOUR_TOKEN>" }
+      "args": ["-y", "@modelcontextprotocol/server-context7"]
     }
   }
 }
