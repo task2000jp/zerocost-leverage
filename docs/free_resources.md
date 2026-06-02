@@ -16,7 +16,7 @@
 |---|---|---|---|
 | **Exa MCP** | 意味検索（コード文脈に強い） | 10k queries/月 | `@modelcontextprotocol/server-exa` |
 | **Firecrawl MCP** | URL→クリーンMarkdown変換 | 5k pages/月 | `@modelcontextprotocol/server-firecrawl` |
-| **Alpaca MCP** | 株価データ・ペーパートレード | 200k req/月 | `@modelcontextprotocol/server-alpaca` |
+| ~~Alpaca MCP~~ | ~~npm未存在~~ | — | REST API直接利用で代替（下記参照） |
 | **Stripe MCP** | 決済・請求（test mode） | 無制限（テスト） | `@modelcontextprotocol/server-stripe` |
 | **n8n MCP** | ワークフロー自動化 | 無制限（セルフホスト） | `@modelcontextprotocol/server-n8n` |
 | **Context7 MCP** | ライブドキュメント | 無制限・認証不要 | `@modelcontextprotocol/server-context7` |
@@ -30,6 +30,7 @@
 
 | 分野 | サービス | 無料枠 |
 |---|---|---|
+| 株式 | **Alpaca REST API** | リアルタイム株価・ペーパートレード・クレカ不要 |
 | 株式 | yfinance | 実質無制限（非公式） |
 | 株式 | Alpha Vantage | 25/日 + ニュース/センチメント |
 | 株式 | Finnhub | リアルタイム+ファンダ |
